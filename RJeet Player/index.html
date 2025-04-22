@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/e5b9d74181.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+   <div class="music-player">
+    <nav>
+      <div class="logo">
+        <a><img src="media/MusicLogo.PNG" alt="Logo_image" >RJeet Player </a>
+    </div>
+      <div class="circle" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+    <img src="media/music image.jpg" class="song-img">
+    <h1 id="song-title">Love-song</h1>
+    <p id="song-artist">Lahore - Guru Randhava</p>
+    <p id="song-album">Album: Unknown</p>
+
+
+   <audio id="song" preload="metadata"></audio>
+
+    <input type="range" value="0" id="progress">
+    <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1" />
+    <div class="controls">
+      <div onclick="prevSong()">
+        <i class="fa-solid fa-backward"></i>
+      </div>
+      <div onclick="playPause()">
+        <i class="fa-solid fa-play" id="ctrlIcon"></i>
+      </div>
+      <div onclick="nextSong()">
+        <i class="fa-solid fa-forward"></i>
+      </div>
+    </div>
+
+    <div id="playlist-wrapper" style="display: none;">
+      <ul id="playlist"></ul>
+    </div>
+    
+    </ul>
+    <div class="add-song-form">
+      <input type="text" id="song-title-input" placeholder="Enter Song Title">
+      <input type="text" id="song-artist-input" placeholder="Enter Artist Name">
+      <input type="text" id="song-album-input" placeholder="Enter Album Name">
+      <input type="text" id="song-src-input" placeholder="Enter Song URL  (e.g. https://.../song.mp3)">
+      <input type="file" id="song-file-input" accept="audio/*">
+
+      <button onclick="addSong()">Add Song</button>
+      
+    </div>
+    <div class="playlist">
+    <button onclick="savePlaylist()">Save Playlist</button>
+      <button onclick="clearPlaylist()">Clear Playlist</button>
+    </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
